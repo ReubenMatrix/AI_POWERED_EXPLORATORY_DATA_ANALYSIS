@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy requirements file and install dependencies
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+RUN pip install smolagents
 
 # Copy the Streamlit app
 COPY . .

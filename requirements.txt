@@ -4,6 +4,6 @@ matplotlib
 seaborn
 reportlab
 sqlalchemy
-smolagents
 langchain
 langchain_mistralai
+scipy
