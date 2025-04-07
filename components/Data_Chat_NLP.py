@@ -52,18 +52,27 @@ class NLPChat:
 
         @tool
         def sql_engine(query: str) -> str:
+            """Execute SQL queries on the uploaded table.
+
+            Args:
+                query: The SQL query to execute.
+
+            Returns:
+                The output of the query execution as a string.
+            """
             try:
                 output = ""
                 with self.engine.connect() as con:
                     rows = con.execute(text(query))
                     for row in rows:
                         output += "\n" + str(row)
-                return output if output else "Query executed successfully, no rows returned."
+                return output
             except Exception as e:
-                return f"SQL Error: {e}"
+                return f"Error executing query: {e}"
+
 
         # Initialize CodeAgent
-        HF_API_KEY = "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"
+        HF_API_KEY = ""
         agent = CodeAgent(
             tools=[sql_engine],
             model=HfApiModel("Qwen/Qwen2.5-Coder-32B-Instruct")

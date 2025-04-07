@@ -381,7 +381,7 @@ class DataReportGenerator:
         st.subheader("Generate Comprehensive Dataset Report")
 
         # API Key input (consider moving to a more secure method)
-        api_key = 'R7dMbTb2uzWiPbDM6zqREQHe0PUCXb7f'
+        api_key = ''
 
         if st.button("Generate PDF Report"):
             with st.spinner("Generating PDF Report..."):
